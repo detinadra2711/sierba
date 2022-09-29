@@ -95,6 +95,6 @@ Auth::routes();
 //     return view('login');
 // });
 
-Auth::routes();
+
 
 
