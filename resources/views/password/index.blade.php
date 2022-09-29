@@ -9,10 +9,10 @@ AUTHORIZATION ACCESS
 <a href="/password/create" class="btn btn-primary btn-sm mb-4">Tambah Akses</a>
 
 
-<form class="form-inline my-2 my-lg-0" type="GET" action="{{ url('/search') }}">
+<!-- <form class="form-inline my-2 my-lg-0" type="GET" action="{{ url('/search') }}">
     <input type="search" name="query" class="form-control" placeholder="Cari">
     <button class="btn btn-outline -light my-2 my-sm-0" type="submit">Search</button>
-</form>
+</form> -->
 
 <table class="table">
   <thead>
@@ -49,6 +49,7 @@ AUTHORIZATION ACCESS
     @endforelse
   </tbody>
 </table>
+{{ $password->links() }}
 
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
