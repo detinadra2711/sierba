@@ -17,14 +17,15 @@ TAMBAH TELEPON EKSTENSION RS ERBA
         @enderror
     <div class="form-group">
         <label>Nama Ruangan</label>
-        <select name="Ruangan_id" class="form-control" id="">
+        <input type="text" name="Ruangan_id" class="form-control" placeholder="nama gedung" required="">
+        <!-- <select name="Ruangan_id" class="form-control" id="">
             <option value="">--- pilih nama ruangan ---</option>
             @forelse ($ruangan as $item)
                 <option value="{{ $item->no }}">{{ $item->nama_ruangan }}</option>
             @empty
                 <option value=""> No Room Found</option>
             @endforelse
-        </select>
+        </select> -->
     </div>
     <div class="form-group">
         <label>Nomor Ekstension</label>
