@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\aplikasiController;
 use App\Http\Controllers\helloController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -39,7 +40,7 @@ Route::resource('arsip', ArsipController::class);
 
 
 // CRUD MENU INVENTARIS IT
-//CREATE
+//CREATE SUB MENU ASET BARANG
 Route::get('/inventaris/tambah', [InventarisController::class, 'inventaris']);
 //untuk kirim data ke DB (tambah data)
 Route::post('/inventaris', [InventarisController::class, 'store']);
@@ -56,6 +57,24 @@ Route::put('/inventaris/{inventaris_no}', [InventarisController::class, 'update'
 Route::delete('/inventaris/{inventaris_no}', [InventarisController::class, 'destroy']);
 // //search data
 Route::get('/inventaris/cari', [InventarisController::class, 'search']);
+
+//CREATE SUB MENU APLIKASI
+Route::get('/aplikasi', [aplikasiController::class, 'inventaris']);
+//untuk kirim data ke DB (tambah data)
+Route::post('/aplikasi', [aplikasiController::class, 'store']);
+//READ data (tampi; data)
+Route::get('/aplikasi', [aplikasiController::class, 'index']);
+//detail inventaris berdasarkan nomor
+Route::get('/aplikasi/{aplikasi_no}', [aplikasiController::class, 'show']);
+//UPDATE data
+//form update/edit inventaris
+Route::get('/aplikasi/{inventaris_no}/edit', [aplikasiController::class, 'edit']);
+//update data ke DB berdasarkan no
+Route::put('/aplikasi/{inventaris_no}', [aplikasiController::class, 'update']);
+//DELETE data berdasarkan parameter no
+Route::delete('/aplikasi/{inventaris_no}', [aplikasiController::class, 'destroy']);
+
+
 
 
 //CRUD ORM Resource

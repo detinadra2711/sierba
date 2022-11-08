@@ -52,37 +52,37 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="/inventaris" class="nav-link">
               <i class="nav-icon fas fa-spider"></i>
               <p>
                 Inventaris IT
               </p>
             </a>
-          </li>
-          {{-- <li class="nav-item">
-            <a href="/inventaris" class="nav-link">
+          </li> --}}
+          <li class="nav-item">
+            <a href="/" class="nav-link">
               <i class="nav-icon fas fa-toilet-paper"></i>
               <p>
-                Halaman -
+                Inventaris IT
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/hello" class="nav-link">
+                <a href="/aplikasi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Halaman awal</p>
+                  <p>Aplikasi / Software</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/hello" class="nav-link">
+                <a href="/inventaris" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Halaman data</p>
+                  <p>Aset Barang</p>
                 </a>
               </li>
             </ul>
-          </li> --}}
+          </li>
           <li class="nav-item">
             <a href="/lap_mutu" class="nav-link">
               <i class="nav-icon fas fa-crow"></i>
@@ -104,6 +104,14 @@
               <i class="nav-icon fas fa-book-dead"></i>
               <p>
                 Authorization Access (Passwords)
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+            <a href="/telepon" class="nav-link">
+              <i class="nav-icon fas fa-ghost"></i>
+              <p>
+                CCTV
               </p>
             </a>
           </li>
