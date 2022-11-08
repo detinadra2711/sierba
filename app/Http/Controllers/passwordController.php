@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\passwordModel;
 
 class passwordController extends Controller
@@ -15,15 +16,16 @@ class passwordController extends Controller
     public function index(Request $request)
     {
         //
-        if($request->has('search')) {
-            $password = passwordModel::where('nama_aplikasi', 'LIKE', '%' .$request->search. '%')->paginate(5);
-        }else {
-            $password = passwordModel::get();
-            return view('password.index', ['password' => $password]);
-        }
+        // if($request->has('search')) {
+        //     $password = passwordModel::where('nama_aplikasi', 'LIKE', '%' .$request->search. '%')->paginate(5);
+        // }else {
+        //     $password = passwordModel::get();
+        //     return view('password.index', ['password' => $password]);
+        // }
 
-        $password = passwordModel::get();
-        $password = passwordModel::paginate(5);
+        // $password = passwordModel::get();
+        // $password = passwordModel::paginate(5);
+        $password = DB::table('password')->paginate(10);
         return view('password.index', ['password' => $password]);
     }
 

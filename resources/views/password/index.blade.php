@@ -6,7 +6,9 @@ AUTHORIZATION ACCESS
 
 @section('content')
 
+@auth
 <a href="/password/create" class="btn btn-primary btn-sm mb-4">Tambah Akses</a>
+@endauth
 
 
 <form class="form-inline my-2 my-lg-0" type="GET" action="{{ url('/search') }}">
@@ -49,6 +51,7 @@ AUTHORIZATION ACCESS
     @endforelse
   </tbody>
 </table>
+{{ $password->links() }}
 
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

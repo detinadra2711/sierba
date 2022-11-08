@@ -49,7 +49,7 @@ class InventarisController extends Controller
 
     public function index() {
 
-        $inventaris = DB::table('inventaris')->get();
+        $inventaris = DB::table('inventaris')->paginate(10);
         // $inv = Auth::id();
 
         // $inventaris = inventarisModel::where('jns_id', $inv)->first();
