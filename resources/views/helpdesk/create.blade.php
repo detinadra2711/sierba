@@ -10,21 +10,21 @@ HELP DESK IT RS ERBA
     @csrf
     <div class="form-group">
         <label>Ticket No</label>
-        <input type="text" name="ticket_no" class="form-control" placeholder="nomor tiket" disabled>
+        <input type="text" name="ticket_no" class="form-control" placeholder="nomor tiket">
     </div>
         @error('ticket_no')
         <div class="alert alert-danger">{{  $message }}</div>
         @enderror
     <div class="form-group">
         <label>User</label>
-        <input type="text" name="user" class="form-control" placeholder="nama user" disabled>
+        <input type="text" name="user" class="form-control" placeholder="nama user">
     </div>
         @error('user')
         <div class="alert alert-danger">{{  $message }}</div>
         @enderror
     <div class="form-group">
         <label>Ruangan</label>
-        <input type="text" name="ruangan" class="form-control" placeholder="nama ruangan" disabled>
+        <input type="text" name="ruangan" class="form-control" placeholder="nama ruangan">
     </div>
         @error('ruang')
         <div class="alert alert-danger">{{  $message }}</div>

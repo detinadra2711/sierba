@@ -16,7 +16,7 @@ class TeleponController extends Controller
     public function index()
     {
         //
-        $telepon = TelephoneModel::get();
+        $telepon = TelephoneModel::all();
         return view('telepon.index', ['telepon' => $telepon]);
     }
 

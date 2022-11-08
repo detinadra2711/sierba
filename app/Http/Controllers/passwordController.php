@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\passwordModel;
-
 class passwordController extends Controller
 {
     /**
@@ -23,9 +22,10 @@ class passwordController extends Controller
         //     return view('password.index', ['password' => $password]);
         // }
 
+        $password = DB::table('password')->paginate(10);
+
         // $password = passwordModel::get();
         // $password = passwordModel::paginate(5);
-        $password = DB::table('password')->paginate(10);
         return view('password.index', ['password' => $password]);
     }
 

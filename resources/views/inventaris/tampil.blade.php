@@ -6,12 +6,11 @@ INVENTARIS IT RS ERBA
 
 @section('content')
 
-  <a href="/inventaris/tambah" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
-
-	<form action="/inventaris/cari" method="GET">
+    <a href="/inventaris/tambah" class="btn btn-primary btn-sm mb-3">Tambah Data</a>
+	<!-- <form action="/inventaris/cari" method="GET">
 		<input type="text" name="cari" placeholder="Cari data .." value="{{ old('cari') }}" disabled>
 		<input type="submit" value="SEARCH">
-	</form>
+	</form> -->
 
     <table class="table">
   <thead>

@@ -12,4 +12,8 @@ class RuanganModel extends Model
     protected $table = 'ruangan';
     protected $primaryKey = 'no';
     protected $fillable = ['nama_ruangan'];
+
+    public function telephones() {
+        return $this->hasMany(TelephoneModel::class);
+    }
 }

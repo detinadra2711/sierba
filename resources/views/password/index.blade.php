@@ -11,10 +11,10 @@ AUTHORIZATION ACCESS
 @endauth
 
 
-<form class="form-inline my-2 my-lg-0" type="GET" action="{{ url('/search') }}">
+<!-- <form class="form-inline my-2 my-lg-0" type="GET" action="{{ url('/search') }}">
     <input type="search" name="query" class="form-control" placeholder="Cari">
     <button class="btn btn-outline -light my-2 my-sm-0" type="submit">Search</button>
-</form>
+</form> -->
 
 <table class="table">
   <thead>

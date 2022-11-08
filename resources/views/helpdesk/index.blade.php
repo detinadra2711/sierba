@@ -6,6 +6,9 @@ HELP DESK IT RS ERBA
 
 @section('content')
 
+@auth
+<a href="/helpdesk/create" class="btn btn-primary btn-sm mb-4">Tambah Tiket</a>
+@endauth
  <table class="table">
   <thead>
     <tr>

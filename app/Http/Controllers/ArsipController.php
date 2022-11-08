@@ -18,7 +18,8 @@ class ArsipController extends Controller
     public function index()
     {
         //ambil semua data dari DB
-        $arsip = ArsipModel::get();
+        // $arsip = ArsipModel::get();
+        $arsip = DB::table('data_file')->paginate(10);
         return view('arsip.index', ['arsip' => $arsip]);
     }
 

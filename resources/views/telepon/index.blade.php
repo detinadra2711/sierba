@@ -20,6 +20,7 @@ Nomor Telepon Ekstension RS ERBA
   </thead>
   <tbody>
     {{-- $key adalah indexnya, $value adalah isi dari index --}}
+    
     @forelse ($telepon as $key => $value)
         <tr>
             <td>{{ $key + 1 }}</td>

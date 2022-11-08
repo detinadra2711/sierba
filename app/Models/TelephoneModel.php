@@ -12,4 +12,8 @@ class TelephoneModel extends Model
     protected $table = 'telephone';
     protected $primaryKey = 'No';
     protected $fillable = ['Gedung', 'Ruangan_id', 'Nomor_Ekstension', 'Keterangan'];
+
+    public function ruangans() {
+        return $this->belongsTo(RuanganModel::class);
+    }
 }
