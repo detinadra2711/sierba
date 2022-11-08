@@ -17,7 +17,7 @@ APLIKASI IT RS ERBA
         @enderror
         <div class="form-group">
             <label>Keterangan</label>
-            <textarea name="keterangan" class="form-control" placeholder="keterangan" required="">
+            <textarea name="keterangan" class="form-control" placeholder="keterangan" required=""></textarea>
         </div>
         @error('keterangan')
             <div class="alert alert-danger">{{ $message }}</div>

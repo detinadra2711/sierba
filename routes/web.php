@@ -59,7 +59,7 @@ Route::delete('/inventaris/{inventaris_no}', [InventarisController::class, 'dest
 Route::get('/inventaris/cari', [InventarisController::class, 'search']);
 
 //CREATE SUB MENU APLIKASI
-Route::get('/aplikasi', [aplikasiController::class, 'inventaris']);
+Route::get('/aplikasi/create', [aplikasiController::class, 'create']);
 //untuk kirim data ke DB (tambah data)
 Route::post('/aplikasi', [aplikasiController::class, 'store']);
 //READ data (tampi; data)
