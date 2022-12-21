@@ -39,5 +39,33 @@ ARSIP IT RS ERBA
     @endforelse
 
 </div>
-    
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.slim.js" integrity="sha256-tXm+sa1uzsbFnbXt8GJqsgi2Tw+m4BLGDof6eUPjbtk=" crossorigin="anonymous"></script>
+
+<script>
+
+  $('.delete').click( function(){
+    var passwordid = $(this).attr('data-id');
+     swal({
+    title: "Are you sure?",
+    text: "Once deleted "+passwordid+", you will not be able to recover this file!  ",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+      swal("Poof! Your file has been deleted!", {
+        icon: "success",
+    });
+    } else {
+      swal("Your file is safe!");
+    }
+  });
+});
+
+</script>
+
+
 @endsection

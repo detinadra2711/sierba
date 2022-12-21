@@ -40,7 +40,7 @@ AUTHORIZATION ACCESS
                     <a href= "/password/{{ $value->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
                     @csrf
                     @method('DELETE')
-                    <input type="#" value="Delete" class="btn btn-danger btn-sm delete" data-id='{{ $value->nama_aplikasi }}'>
+                    <input type="delete" value="Delete" class="btn btn-danger btn-sm delete" data-id='{{ $value->nama_aplikasi }}'>
                 </form>
             </td>
         </tr>
@@ -51,6 +51,8 @@ AUTHORIZATION ACCESS
     @endforelse
   </tbody>
 </table>
+
+<!-- page number -->
 {{ $password->links() }}
 
 

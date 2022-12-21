@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TelephoneController;
 use App\Http\Controllers\passwordController;
 use App\Http\Controllers\helpdeskController;
+use App\Http\Controllers\cctvController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -94,6 +95,11 @@ Route::resource('password', passwordController::class);
 
 // CRUD ORM MENU TELEPHONE
 Route::resource('telepon', TeleponController::class);
+
+// CRUD ORM MENU CCTV
+Route::resource('cctv', cctvController::class);
+
+
 
 
 Route::get('telephone/view', [TelephoneController::class, 'viewTelephone'])->name('viewTelephone'); //melihat nomor telephone

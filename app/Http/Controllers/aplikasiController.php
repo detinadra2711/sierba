@@ -50,6 +50,21 @@ class aplikasiController extends Controller
     public function store(Request $request)
     {
         //
+         //untuk validasi jika user tidak mengisi database
+         $request->validate([
+            'nama_aplikasi' => 'required',
+            'keterangan' => 'required',
+            
+        ]);
+
+        $aplikasi = new AplikasiModel;
+        $aplikasi->nama_aplikasi = $request->nama_aplikasi;
+        $aplikasi->keterangan = $request->keterangan;
+        $aplikasi->lisensi = $request->lisensi;
+        
+        $aplikasi->save();
+
+        return redirect('/aplikasi');
     }
 
     /**
@@ -61,6 +76,9 @@ class aplikasiController extends Controller
     public function show($id)
     {
         //
+        $aplikasi = DB::table('aplikasi')->where('id', $id)->first();
+
+        return view('inventaris.aplikasi.detail', ['aplikasi' => $aplikasi]);
     }
 
     /**
@@ -72,6 +90,9 @@ class aplikasiController extends Controller
     public function edit($id)
     {
         //
+        $aplikasi = DB::table('aplikasi')->where('id', $id)->first();
+
+        return view('inventaris.aplikasi.edit', ['aplikasi' => $aplikasi]);
     }
 
     /**
@@ -84,6 +105,23 @@ class aplikasiController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'nama_aplikasi' => 'required',
+            'keterangan' => 'required',
+            'lisensi' => 'required'
+        ]);
+
+        DB::table('aplikasi')
+            ->where('id', $id)
+            ->update(
+                [
+                    'nama_aplikasi' => $request->nama_aplikasi,
+                    'keterangan' => $request->keterangan,
+                    'lisensi' => $request->lisensi
+                ],
+            );
+
+            return redirect('/aplikasi');
     }
 
     /**
@@ -95,5 +133,8 @@ class aplikasiController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('aplikasi')->where('id', $id)->delete();
+
+        return redirect('/aplikasi');
     }
 }

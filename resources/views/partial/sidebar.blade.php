@@ -108,7 +108,7 @@
             </a>
           </li>
            <li class="nav-item">
-            <a href="/telepon" class="nav-link">
+            <a href="/cctv" class="nav-link">
               <i class="nav-icon fas fa-ghost"></i>
               <p>
                 CCTV

@@ -75,6 +75,9 @@ class passwordController extends Controller
     public function show($id)
     {
         //
+        $password = DB::table('password')->where('id', $id)->first();
+
+        return view('password.detail', ['password' => $password]);
     }
 
     /**
@@ -88,7 +91,7 @@ class passwordController extends Controller
         //
         $password = passwordModel::find($id);
 
-        return view('password.update', ['password' => $password]);
+        return view('password.edit', ['password' => $password]);
     }
 
     /**
@@ -101,6 +104,23 @@ class passwordController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'nama_aplikasi' => 'required',
+            'alamat_ip' => 'required',
+            'password' => 'required'
+        ]);
+
+        DB::table('password')
+            ->where('id', $id)
+            ->update(
+                [
+                    'nama_aplikasi' => $request->nama_aplikasi,
+                    'alamat_ip' => $request->alamat_ip,
+                    'password' => $request->password
+                ],
+            );
+
+            return redirect('/password');
     }
 
     /**
@@ -112,7 +132,12 @@ class passwordController extends Controller
     public function destroy($id)
     {
         //
+        DB::table('password')->where('id', $id)->delete();
+
+        return redirect('/password');
     }
+
+
     public function search()
     {
         $search_text = $_GET('query');
