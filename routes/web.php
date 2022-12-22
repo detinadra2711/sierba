@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\aplikasiController;
+
 use App\Http\Controllers\helloController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -8,10 +8,12 @@ use App\Http\Controllers\ArsipController;
 use App\Http\Controllers\TeleponController;
 use App\Http\Controllers\LapMutuController;
 use App\Http\Controllers\InventarisController;
+use App\Http\Controllers\aplikasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TelephoneController;
 use App\Http\Controllers\passwordController;
 use App\Http\Controllers\helpdeskController;
+use App\Http\Controllers\cctvController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -44,7 +46,7 @@ Route::resource('arsip', ArsipController::class);
 Route::get('/inventaris/tambah', [InventarisController::class, 'inventaris']);
 //untuk kirim data ke DB (tambah data)
 Route::post('/inventaris', [InventarisController::class, 'store']);
-//READ data (tampi; data)
+//READ data (tampil data)
 Route::get('/inventaris', [InventarisController::class, 'index']);
 //detail inventaris berdasarkan nomor
 Route::get('/inventaris/{inventaris_no}', [InventarisController::class, 'show']);
@@ -62,17 +64,17 @@ Route::get('/inventaris/cari', [InventarisController::class, 'search']);
 Route::get('/aplikasi/create', [aplikasiController::class, 'create']);
 //untuk kirim data ke DB (tambah data)
 Route::post('/aplikasi', [aplikasiController::class, 'store']);
-//READ data (tampi; data)
+//READ data (tampil data)
 Route::get('/aplikasi', [aplikasiController::class, 'index']);
-//detail inventaris berdasarkan nomor
+//detail aplikasi berdasarkan nomor
 Route::get('/aplikasi/{aplikasi_no}', [aplikasiController::class, 'show']);
 //UPDATE data
-//form update/edit inventaris
-Route::get('/aplikasi/{inventaris_no}/edit', [aplikasiController::class, 'edit']);
+//form update/edit aplikasi
+Route::get('/aplikasi/{aplikasi_no}/edit', [aplikasiController::class, 'edit']);
 //update data ke DB berdasarkan no
-Route::put('/aplikasi/{inventaris_no}', [aplikasiController::class, 'update']);
+Route::put('/aplikasi/{aplikasi_no}', [aplikasiController::class, 'update']);
 //DELETE data berdasarkan parameter no
-Route::delete('/aplikasi/{inventaris_no}', [aplikasiController::class, 'destroy']);
+Route::delete('/aplikasi/{aplikasi_no}', [aplikasiController::class, 'destroy']);
 
 
 
@@ -89,6 +91,19 @@ Route::resource('helpdesk', helpdeskController::class);
 
 // MENU AUTHORIZATION ACCESS
 Route::resource('password', passwordController::class);
+
+
+//CRUD CCTV
+Route::resource('cctv', cctvController::class);
+//UPDATE data
+//form update/edit cctv
+Route::get('/cctv/{cctv_id}/edit', [cctvController::class, 'edit']);
+//update data ke DB berdasarkan no
+Route::put('/cctv/{cctv_id}', [cctvController::class, 'update']);
+//DELETE data berdasarkan parameter no
+Route::delete('/cctv/{cctv_id}', [cctvController::class, 'destroy']);
+//search data
+// Route::get('/inventaris/cari', [InventarisController::class, 'search']);
 
 
 
