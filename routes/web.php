@@ -110,6 +110,11 @@ Route::delete('/cctv/{cctv_id}', [cctvController::class, 'destroy']);
 // CRUD ORM MENU TELEPHONE
 Route::resource('telepon', TeleponController::class);
 
+// CRUD ORM MENU CCTV
+Route::resource('cctv', cctvController::class);
+
+
+
 
 Route::get('telephone/view', [TelephoneController::class, 'viewTelephone'])->name('viewTelephone'); //melihat nomor telephone
 Route::get('telephone/add', [TelephoneController::class, 'addTelephone']);

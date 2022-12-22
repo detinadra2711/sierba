@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TelephoneModel;
 use App\Models\RuanganModel;
+use Illuminate\Support\Facades\DB;
 
 class TeleponController extends Controller
 {
@@ -76,9 +77,13 @@ class TeleponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($No)
     {
         //
+        $telepon = TelephoneModel::find($No);
+        // $telepon = DB::table('telephone')->where('No', $No)->first();
+        return view('telepon.edit', ['telepon' => $telepon]);
+
     }
 
     /**
@@ -88,9 +93,28 @@ class TeleponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $No)
     {
         //
+        $request->validate([
+            'Gedung' => 'required',
+            'Ruangan_id' => 'required',
+            'Nomor_Ekstension' => 'required',
+            'Keterangan' =>'required',
+        ]);
+
+        DB::table('telephone')
+            ->where('No', $No)
+            ->update(
+                [
+                    'Gedung' => $request->Gedung,
+                    'Ruangan_id' => $request->Ruangan_id,
+                    'Nomor_Ekstension' => $request->Nomor_Ekstension,
+                    'Keterangan' => $request->Keterangan,
+                ],
+            );
+
+            return redirect('/telepon');
     }
 
     /**
@@ -99,8 +123,11 @@ class TeleponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($No)
     {
         //
+        DB::table('telephone')->where('No', $No)->delete();
+
+        return redirect('/telepon');
     }
 }

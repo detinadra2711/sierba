@@ -30,9 +30,9 @@ Nomor Telepon Ekstension RS ERBA
             <td>{{ $value->Keterangan }}</td>
             <td>
                 
-                <form action="/telepon/{{ $value->no }}" method="POST">
-                    <a href= "/telepon/{{ $value->no }}" class="btn btn-info btn-sm">Detail</a>
-                    <a href= "/telepon/{{ $value->no }}/edit" class="btn btn-warning btn-sm">Edit</a>
+                <form action="/telepon/{{ $value->No }}" method="POST">
+                    {{-- <a href= "/telepon/{{ $value->No }}" class="btn btn-info btn-sm">Detail</a> --}}
+                    <a href= "/telepon/{{ $value->No }}/edit" class="btn btn-warning btn-sm">Edit</a>
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
