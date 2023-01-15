@@ -14,6 +14,7 @@ use App\Http\Controllers\TelephoneController;
 use App\Http\Controllers\passwordController;
 use App\Http\Controllers\helpdeskController;
 use App\Http\Controllers\cctvController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -35,6 +36,7 @@ Route::get('/', [HomeController::class, 'index']);
 //     return view('welcome');
 // });
 
+Route::get('user', [userController::class, 'index']);
 
 
 // CRUD ORM MENU ARSIP IT
